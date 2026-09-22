@@ -8,6 +8,8 @@
 import re
 import json
 import math
+import random
+import time
 import requests
 from tqdm import tqdm
 
@@ -32,6 +34,14 @@ _SPOT_BASE_URL = (
 )
 
 _MAX_STOCKS = 100
+
+# 请求间随机延迟范围（秒），降低被风控/封IP的概率
+_REQUEST_DELAY_RANGE = (1, 3)
+
+
+def _delay():
+    """请求前随机延迟"""
+    time.sleep(random.uniform(*_REQUEST_DELAY_RANGE))
 
 
 def _build_secid(code: str) -> str:
@@ -131,6 +141,7 @@ def stocks_all_em(filter_st: bool = True) -> list:
         pbar.update(1)  # 第一页已完成
         while len(raw) < total:
             params["pn"] += 1
+            _delay()
             resp = requests.get(_BASE_URL, params=params, headers=_HEADERS, timeout=10)
             resp.raise_for_status()
             body = resp.json()["data"]

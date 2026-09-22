@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "levistock"
-version = "0.1.6"
+version = "0.1.8"
 description = "A股市场数据SDK"
 readme = "README.md"
 license = {text = "MIT"}
