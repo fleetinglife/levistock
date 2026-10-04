@@ -1,4 +1,4 @@
-## A股或量化交流（纸✈️）：https://t.me/+KkSvBB_Utaw5ZmJl
+## A股或量化交流（纸✈️）：[https://t.me/+KkSvBB_Utaw5ZmJl](https://t.me/+zkl2FrWMF8pkYjg1)
 
 # levistock
 
